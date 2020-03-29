@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>JavaScript</title>
+
+	<script>
+		function calc() {
+			v1 = parseFloat(document.form1.valor1.value);
+			v2 = parseFloat(document.form1.valor2.value);
+			op = document.form1.operacao.value;
+
+
+			switch(op) {
+			case "ad" : res = v1 + v2 ;break;
+			case "su" : res = v1 - v2 ;break;
+			case "mu" : res = v1 * v2 ;break;
+			case "di" : if (v2 !=0) res = v1 / v2;
+							else res = "Divisão por zero";
+							break;
+		}
+
+			document.form1.res.value = res;
+
+		}
+	</script>
+</head>
+<body>
+
+	<form name="form1">
+
+		<label for="valor1"> Valor 1 </label><br>
+		<input type="text" name="valor1" size="40" maxlength="5"/> <br>
+
+		<label for="valor2"> Valor 2 </label><br>
+		<input type="text" name="valor2" size="40" maxlength="5"/> <br>
+
+		<input type="radio" id="ad" name="operacao" value="ad" checked>
+		<label for="ad"> Adição </label><br>
+
+		<input type="radio" id="su" name="operacao" value="su">
+		<label for="su"> Subtração </label><br>
+
+		<input type="radio" id="mu" name="operacao" value="mu">
+		<label for="mu"> Multiplição </label><br>
+
+		<input type="radio" id="di" name="operacao" value="di">
+		<label for="di"> Divisão </label><br>
+
+		<label for="res"> Resultado </label><br>
+		<input type="text" name="res" size="40" maxlength="5" readonly/><br>
+
+		<input type="button" name="calcular" value="Calcular" onclick="calc()"/>
+
+		<input type="reset" name="limpar" value="Limpar"/>
+		
+	</form>
+
+</body>
+</html>
